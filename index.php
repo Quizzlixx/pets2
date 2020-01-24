@@ -5,6 +5,8 @@
  * 1.24.20
  * Full Stack Software Development
  */
+// start session
+session_start();
 
 // turn on error reporting
 ini_set('display_errors', 1);
@@ -49,6 +51,31 @@ $f3 -> route('GET /@item', function($f3, $params){
         echo "<p>404 Error Pick a legit animal to eat!</p>";
     }
 
+});
+
+// define order route
+$f3 -> route('GET /order', function(){
+    $view = new Template();
+    echo $view -> render('views/order');
+});
+
+// order 2 route
+$f3 -> route('POST /order2', function(){
+    var_dump($_POST);
+    $_SESSION['animal'] = $_POST['animal'];
+
+    $view = new Template();
+    echo $view -> render('views/order2');
+});
+
+// results route
+$f3 -> route('POST /results', function(){
+    var_dump($_POST);
+    var_dump($_SESSION);
+    $_SESSION['colors'] = $_POST['colors'];
+
+    $view = new Template();
+    echo $view -> render('views/results');
 });
 
 
