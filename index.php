@@ -26,5 +26,31 @@ $f3->route('GET /', function() {
 //    echo $view->render('views/home.html');
 });
 
+$f3 -> route('GET /@item', function($f3, $params){
+    // var_dump($params);
+    $item = $params['item'];
+
+    if($item == "dog" ){
+        echo "<p>Woof</p>";
+    }
+    else if($item == "ostrich"){
+        echo "<p>Bakaw</p>";
+    }
+    else if($item == "pig"){
+        echo "<p>Oink</p>";
+    }
+    else if($item == "cat"){
+        echo "<p>Meow</p>";
+    }
+    else if($item == "chicken"){
+        echo "<p>Cluck</p>";
+    }
+    else{
+        echo "<p>Whatever</p>";
+    }
+
+});
+
+
 // run f3
 $f3->run();
