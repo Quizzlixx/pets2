@@ -46,7 +46,7 @@ $f3 -> route('GET /@item', function($f3, $params){
         echo "<p>Cluck</p>";
     }
     else{
-        echo "<p>Whatever</p>";
+        echo "<p>404 Error Pick a legit animal to eat!</p>";
     }
 
 });
