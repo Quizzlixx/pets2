@@ -23,7 +23,7 @@ $f3 = Base::instance();
 // -> calls an instance method
 $f3->route('GET /', function() {
     echo "<h1>My Pets</h1>";
-    echo "<a href='views/order'>Order a Pet</a>";
+    echo "<a href='order'>Order a Pet</a>";
 //    $view = new Template();
 //    echo $view->render('views/home.html');
 });
