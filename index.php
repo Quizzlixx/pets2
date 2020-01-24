@@ -23,7 +23,7 @@ $f3 = Base::instance();
 // -> calls an instance method
 $f3->route('GET /', function() {
     echo "<h1>My Pets</h1>";
-    echo "<a href='order'>Order a Pet</a>";
+    echo "<a href='views/order'>Order a Pet</a>";
 //    $view = new Template();
 //    echo $view->render('views/home.html');
 });
@@ -56,7 +56,7 @@ $f3 -> route('GET /@item', function($f3, $params){
 // define order route
 $f3 -> route('GET /order', function(){
     $view = new Template();
-    echo $view -> render('views/order');
+    echo $view -> render('views/form1.html');
 });
 
 // order 2 route
@@ -65,7 +65,7 @@ $f3 -> route('POST /order2', function(){
     $_SESSION['animal'] = $_POST['animal'];
 
     $view = new Template();
-    echo $view -> render('views/order2');
+    echo $view -> render('views/form2.html');
 });
 
 // results route
@@ -75,7 +75,7 @@ $f3 -> route('POST /results', function(){
     $_SESSION['colors'] = $_POST['colors'];
 
     $view = new Template();
-    echo $view -> render('views/results');
+    echo $view -> render('views/results.html');
 });
 
 
